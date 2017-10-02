@@ -6,7 +6,31 @@
 </head>
 <body>
     <script>
+        // IIFE
+        (function() {
+            var name = "greg";
+        }());
 
+        // ES6 way
+        {
+            const name = 'greg';
+        }
+
+        // problem returning the correct value of `i`
+        for (var i = 0; i < 10; i++) {
+            console.log(i);
+            setTimeout(function() {
+                console.log('The number is ' + 1);
+            },1000);
+        }
+
+        // `let` resolves that issue
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+            setTimeout(function() {
+                console.log('The number is ' + 1);
+            },1000);
+        }
     </script>
 </body>
 </html>
