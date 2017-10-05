@@ -6,6 +6,27 @@
 </head>
 <body>
     <script>
+        // traditional way
+        function calculateBill(total, tax, tip) {
+            tax = tax || 0.085;
+            tip = tip || 0.15;
+            return total + (total * tax) + (total * tip);
+        }
+
+        const totalBill = calculateBill(100);
+        console.log(totalBill);
+
+        // ES6 way!!! version 1
+        function calculateBill2(total, tax = 0.085, tip = 0.15) {
+            return total + (total * tax) + (total * tip);
+        }
+
+        const totalBill2 = calculateBill2(100);
+        console.log(totalBill2);
+
+        const totalBill3 = calculateBill2(100, undefined, 0.25);
+        console.log(totalBill3);
+
 
     </script>
 </body>
