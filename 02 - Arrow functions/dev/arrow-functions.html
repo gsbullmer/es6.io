@@ -8,7 +8,41 @@
     <script>
         const names = ["greg", "cynthia", "anna claire"];
 
+        // traditional way
+        const fullNames = names.map(function(name) {
+            return `${name} bullmer`;
+        });
+        console.log(fullNames);
 
+        // ES6 way!!! version 1
+        const fullNames2 = names.map((name) => {
+            return `${name} bullmer`;
+        });
+        console.log(fullNames2);
+
+        // ES6 way!!! version 2
+        const fullNames3 = names.map(name => {
+            return `${name} bullmer`;
+        });
+        console.log(fullNames3);
+
+        // ES6 way!!! version 3
+        const fullNames4 = names.map(name => `${name} bullmer`);
+        console.log(fullNames4);
+
+        // ES6 way!!! version 4
+        const fullNames5 = names.map(() => `cool bullmer`);
+        console.log(fullNames5);
+
+        // named function
+        function sayMyName(name) {
+            return `Hello ${name}`;
+        }
+        console.log(sayMyName("Greg"));
+
+        // anonymous function
+        const sayMyName2 = name => `Hello ${name}`;
+        console.log(sayMyName2("Greg"));
 
     </script>
 
