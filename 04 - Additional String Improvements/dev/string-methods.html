@@ -13,15 +13,36 @@ const accountNumber = '825242631RT0001';
 
 const make = 'BMW';
 const model = 'x5';
-const colour = 'Royal Blue';
+const color = 'Royal Blue';
 
 // .startsWith()
+console.log(course.startsWith("RFB")); // true
+console.log(course.startsWith("rfb")); // false, case sensitive
+
+console.log(flightNumber.startsWith("AC")); // false
+console.log(flightNumber.startsWith("AC", 3)); // true, skips the first three characters
 
 // .endsWith()
+console.log(flightNumber.endsWith("jz")); // true
+console.log(accountNumber.endsWith("RT")); // false
+console.log(accountNumber.endsWith("RT", 11)); // true, takes the first 11 characters
 
 // .includes()
+console.log(flightNumber.includes("AC")); // true
+console.log(flightNumber.includes("ac")); // false, case sensitive
 
 // .repeat()
+console.log("🐍".repeat(10));
+
+function leftPad(str, length = 20) {
+  return `➡ ${" ".repeat(length - str.length)}${str}`;
+}
+
+console.log(leftPad(make));
+console.log(leftPad(model));
+console.log(leftPad(color));
+
+console.log(`${'💃🏼' * 5}`.repeat(8) + " Batman!");
 
 </script>
 
