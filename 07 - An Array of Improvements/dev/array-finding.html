@@ -179,7 +179,13 @@
   ];
   
   // .find()
+  const code = "_A2r0aQcfD"
+  const post = posts.find(post => post.code === code);
+  console.log(post);
+
   // .findIndex()
+  const postIndex = posts.findIndex(post => post.code === code);
+  console.log(postIndex);
 
 </script>
 </body>
