@@ -6,7 +6,28 @@
 </head>
 <body>
 <script>
+  class MovieCollection extends Array {
+    constructor(name, ...items) {
+      super(...items);
+      this.name = name;
+    }
+    add(movie) {
+      this.push(movie);
+    }
+    topRated(limit = 10) {
+      return [...this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit)];
+    }
+  }
 
+  const movies = new MovieCollection(
+    'Greg\'s Fav Movies',
+    { name: 'Up', stars: 10 },
+    { name: 'Oldboy', stars: 9 },
+    { name: 'Once', stars: 7 },
+    { name: 'Spirited Away', stars: 8 },
+  );
+
+  movies.add({ name: 'Suckerpunch', stars: 7 });
 </script>
 </body>
 </html>
