@@ -9,6 +9,12 @@
   let dog1 = { name: 'Snickers', age: 3 };
   let dog2 = { name: 'sunny', age: 1 };
 
+  const weakSauce = new WeakSet([dog1, dog2]);
+
+  console.log(weakSauce);
+  delete dog1;
+  console.log(weakSauce);
+
 </script>
 </body>
 </html>
