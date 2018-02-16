@@ -16,8 +16,17 @@
       });
     }
 
-    async function go() {
-      console.log('start');
+    function catchErrors(fn) {
+      return function (...args) {
+        return fn(...args).catch(err => {
+          console.error('Ohhhh nooooo!!!!!!');
+          console.error(err);
+        });
+      }
+    }
+
+    async function go(name, last) {
+      console.log(`starting for ${name} ${last}`);
       const res1 = await breathe(1000);
       console.log(res1);
       const res2 = await breathe(300);
@@ -29,7 +38,8 @@
       console.log('end');
     }
 
-    go();
+    const wrappedFunction = catchErrors(go);
+    wrappedFunction('Greg', 'Bullmer');
   </script>
 </body>
 
