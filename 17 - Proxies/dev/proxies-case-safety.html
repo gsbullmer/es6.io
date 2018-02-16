@@ -6,18 +6,18 @@
 </head>
 <body>
 <script>
-  const map = {};
+  const safeHandler = {
+    set(target, name, value) {
+      const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+      if (!(name in target) && likeKey) {
+        throw new Error(`Oops! Looks like we already have a(n) ${name} property but with the case of ${likeKey}.`);
+      }
+      target[name] = value;
+    }
+  };
 
-  map.longitiutde = 79.3423; // spell wrong
-  map.longitutde = 79.3423; // full spelling
-  map.long = 79.3423; // wrong key
-  map.lon = 79.3423; // nope
-  map.lng = 79.3423; // Got it!
-
-  const person = { name: 'Greg' };
-  person.ID = 123; // no
-  person.iD = 123; // no
-  person.id = 123; // yes
+  const safety = new Proxy({ id: 100 }, safeHandler);
+  safety.ID = 200;
 
 </script>
 </body>
