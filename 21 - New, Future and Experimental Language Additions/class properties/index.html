@@ -12,8 +12,13 @@
       constructor(name, breed) {
         this.name = name;
         this.breed = breed;
+
+        // current usage
+        this.barks = 0;
       }
-      barks = 0;
+
+      // proposed usage
+      // barks = 0;
 
       bark() {
         console.log(`Bark Bark! My name is ${this.name}`);
